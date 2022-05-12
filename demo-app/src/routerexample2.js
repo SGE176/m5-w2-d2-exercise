@@ -28,8 +28,9 @@ export default function App() {
               <Route path="/about" element={<About />} />
                 
               <Route path="/topics" element={<Topics />}>
+                <Route path="" element={<Info />} />
                 <Route path=":topicId" element={<Topic />} />
-   ]
+                
               </Route>
               <Route path="/" element={<Home />} />
             </Routes>
@@ -71,4 +72,7 @@ function About() {
 function Topic() {
   let { topicId } = useParams();
   return <h3>Requested topic ID: {topicId}</h3>;
+}
+function Info() {
+  return <h3>Please select a topic above:</h3>
 }
